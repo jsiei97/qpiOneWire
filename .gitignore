@@ -1,0 +1,11 @@
+# The exec
+qpiOneWire
+
+# Obj
+*.o
+
+# Index files
+cscope.files
+cscope.out
+tags
+
