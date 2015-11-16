@@ -54,7 +54,6 @@ bool SysfsOW::getValue(QString addr, double *value)
     //qDebug() << "[" << __PRETTY_FUNCTION__ << __LINE__ << "]" << filename;
 
     QFile file(filename);
-    //QFile file("w1_slave.test");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         return false;
