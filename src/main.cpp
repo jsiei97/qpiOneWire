@@ -29,13 +29,33 @@
 
 int main()
 {
-    SysfsOW ow;
-
-    QStringList l = ow.list();
+    QStringList l = SysfsOW::list();
 
     for (int i = 0; i < l.size(); ++i)
     {
         qDebug() << l.at(i);
+
+        double value = 85.0;
+        if(SysfsOW::getValue(l.at(i), &value))
+        {
+            qDebug() << "ok" << value;
+        }
+        else
+        {
+            qDebug() << "fail" << value;
+        }
     }
+
+    /*
+	double value = 85.0;
+	if(SysfsOW::getValue("28-000000b51bac", &value))
+	{
+		qDebug() << "ok" << value;
+	}
+	else
+	{
+		qDebug() << "fail" << value;
+	}
+    */
     return 0;
 }

@@ -32,7 +32,8 @@ class SysfsOW
 {
     private:
     public:
-        QStringList list();
+        static QStringList list();
+        static bool getValue(QString addr, double *value);
 };
 
 #endif  // __SYSFSOW_H
